@@ -34,7 +34,7 @@ export default async function getTitle(id) {
     review_api_path: `/reviews/${id}`,
     imdb: `https://www.imdb.com/title/${id}`,
     contentType: props.aboveTheFoldData?.titleType?.id ?? null,
-    contentRating: props.aboveTheFoldData?.certificate?.rating ?? "N/A",
+    contentRating: props.aboveTheFoldData?.certificate?.rating ?? null,
     isSeries: props.aboveTheFoldData?.titleType?.isSeries ?? null,
     productionStatus:
       props.aboveTheFoldData?.productionStatus?.currentProductionStage?.id ?? null,
@@ -50,14 +50,14 @@ export default async function getTitle(id) {
     runtime:
       props.aboveTheFoldData?.runtime?.displayableProperty?.value?.plainText ??
       "",
-    runtimeSeconds: props.aboveTheFoldData?.runtime?.seconds ?? 0,
+    runtimeSeconds: props.aboveTheFoldData?.runtime?.seconds ?? null,
     rating: {
-      count: props.aboveTheFoldData.ratingsSummary?.voteCount ?? 0,
-      star: props.aboveTheFoldData.ratingsSummary?.aggregateRating ?? 0,
+      count: props.aboveTheFoldData.ratingsSummary?.voteCount ?? null,
+      star: props.aboveTheFoldData.ratingsSummary?.aggregateRating ?? null,
     },
     award: {
-      wins: props.mainColumnData?.wins?.total ?? 0,
-      nominations: props.mainColumnData?.nominations?.total ?? 0,
+      wins: props.mainColumnData?.wins?.total ?? null,
+      nominations: props.mainColumnData?.nominations?.total ?? null,
     },
     genre: props.aboveTheFoldData?.genres?.genres?.map((e) => e?.id),
     releaseDetailed: {
