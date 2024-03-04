@@ -66,7 +66,7 @@ export default async function getTitle(id) {
       date:
         new Date(
           props.aboveTheFoldData?.releaseDate?.year ?? 0,
-          props.aboveTheFoldData?.releaseDate?.month - 1 ?? 0,
+          (props.aboveTheFoldData?.releaseDate?.month ?? 1) - 1,
           props.aboveTheFoldData?.releaseDate?.day
         ).toISOString() ?? null,
       day: props.aboveTheFoldData?.releaseDate?.day ?? null,
